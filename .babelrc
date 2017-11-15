@@ -1,0 +1,7 @@
+
+
+
+{ 
+"presets": ["react", ["es2015", { "modules": false }], "es2016"],
+"plugins": ["transform-react-jsx-source"]
+}
