@@ -5,7 +5,7 @@ import { Main } from './Main';
 
 function mapStateToProps(state){
 	return {
-     user: state.form.regUser,
+     users: state.userReducer,
 	}
 };
 

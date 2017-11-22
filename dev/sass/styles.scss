@@ -1,8 +1,8 @@
 @import "normalize";
   
-  body {
-  background-color: #A1C5AA;
-}
+/*   body {
+background-color: #A1C5AA;
+} */
 
 li {list-style: none;}
 
@@ -25,9 +25,14 @@ h2 {
   color: #000;
 }
 
+.user-form {
+  margin: 0 auto;
+  /* border: 1px solid green; */
+}
+
 /* FormInput settings */
 
-form.prod_input {
+/* form.prod_input {
   p {
     text-align: center;
   }
@@ -54,7 +59,7 @@ form.prod_input {
     }
     input {border: none;}
   }
-}
+} */
 
 
 /* Product items */

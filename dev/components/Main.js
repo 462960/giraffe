@@ -3,12 +3,17 @@ import { GoodsTable} from './GoodsTable';
 import { FormInputContainer} from './FormInputContainer';
 import { ErrorBoundary} from './ErrorBoundary';
 import { UserFormContainer} from './UserFormContainer';
+import IconButton from 'material-ui/IconButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 
 
 export let Main = (props) => {
 	return 	<div className="wrapper">
-				<a className="github" target="_blank" href="https://github.com/462960/Colored_products">GitHub</a>
+				{/*<a className="github" target="_blank" href="https://github.com/462960/Colored_products">GitHub</a>*/}
+				<MuiThemeProvider>
+					<IconButton iconClassName="muidocs-icon-custom-github" />
+				</MuiThemeProvider>
 				<ErrorBoundary>
 					<UserFormContainer {...props} />
 				</ErrorBoundary>
