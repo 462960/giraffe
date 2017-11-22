@@ -8,4 +8,8 @@ const enhancers = compose(
 window.devToolsExtension && window.devToolsExtension()
 	);
 
-export const store = createStore(rootReducer, persistedState, enhancers);
+export const store = createStore(
+	rootReducer, 
+	//persistedState, 
+	enhancers
+);

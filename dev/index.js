@@ -4,16 +4,17 @@ require('./sass/styles');
 import {Provider} from 'react-redux';
 import { store } from './store';
 import { App } from './components/App';
+import { Main } from './components/Main';
 import {saveState} from './localStorage';
 import throttle from 'lodash/throttle';
 
-store.subscribe(throttle(() => {
-	saveState(store.getState());
-}, 1000));
+// store.subscribe(throttle(() => {
+// 	saveState(store.getState());
+// }, 1000));
 
 const wrap = (
 	<Provider store={store}>
-	<App/>
+		<App/>
 	</Provider>
 	);
 

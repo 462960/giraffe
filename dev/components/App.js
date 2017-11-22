@@ -5,7 +5,7 @@ import { Main } from './Main';
 
 function mapStateToProps(state){
 	return {
-     prod: state.goodsList,
+     user: state.form.regUser,
 	}
 };
 
@@ -13,4 +13,7 @@ function mapDispatchToProps(dispatch){
 	return bindActionCreators(actionCreators, dispatch)
 };
 
-export const App = connect(mapStateToProps, mapDispatchToProps)(Main);
+export const App = connect(
+	mapStateToProps, 
+	mapDispatchToProps
+	)(Main);

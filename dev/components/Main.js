@@ -2,23 +2,34 @@ import React from 'react';
 import { GoodsTable} from './GoodsTable';
 import { FormInputContainer} from './FormInputContainer';
 import { ErrorBoundary} from './ErrorBoundary';
+import { UserFormContainer} from './UserFormContainer';
 
 
 
 export let Main = (props) => {
-	let number = props.prod.length;
 	return 	<div className="wrapper">
-				<h2>
-			  		<span className={number == 0 ? 'none' : ''}>{number}
-			  		</span> Colored Product<span className={number == 1 ? 'none' : ''}>s</span>
-				</h2>
 				<a className="github" target="_blank" href="https://github.com/462960/Colored_products">GitHub</a>
 				<ErrorBoundary>
-					<FormInputContainer {...props} />
-					<GoodsTable {...props} />
+					<UserFormContainer {...props} />
 				</ErrorBoundary>
 			</div>
             }
 
+ // export class Main extends React.Component{
+ // 	doSomething(valu) {
+    // print the form values to the console
+ //    console.log(valu.name)
+ //  }
 
+ // 	render(){
+ // 		return 	(<div className="wrapper">
+ // 						<a className="github" target="_blank" href="https://github.com/462960/Colored_products">GitHub</a>
+ // 						<ErrorBoundary>
+ // 							<UserFormContainer {...this.props} />
+ // 						</ErrorBoundary>
+ // 					</div>)
+
+ // 	}
+
+ // }
  

@@ -50,7 +50,7 @@ const config = {
     },
      devServer: {
         compress: false,
-        port: 9009
+        port: 9909
     }
 };
 

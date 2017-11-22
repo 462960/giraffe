@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --history-api-fallback ",
-    "test":  "webpack --config webpack.config.prod.js -p"
+    "test": "webpack --config webpack.config.prod.js -p"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,8 @@
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-redux": "^5.0.6",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-form": "^7.1.2"
   },
   "devDependencies": {
     "eslint": "^4.11.0",
