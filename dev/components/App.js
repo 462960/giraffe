@@ -6,6 +6,7 @@ import { Main } from './Main';
 function mapStateToProps(state){
 	return {
      users: state.userReducer,
+     logged: state.authReducer,
 	}
 };
 

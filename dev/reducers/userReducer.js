@@ -1,5 +1,7 @@
 import {
 	ADD_USER, 
+	AUTH_USER, 
+	LOGOUT_USER, 
 	ADD_ADV, 
 	REMOVE_ADV
 	} from '../constants';
@@ -12,6 +14,10 @@ export function userReducer(state = [], action){
 			name: action.name,
 			pass: action.pass
 			}];
+		// 	case AUTH_USER:
+		// return [...state,{
+		// 	id: action.id,
+		// 	}];
 		case ADD_ADV:
 		return [...state,{
 			id: action.id,
@@ -24,6 +30,22 @@ export function userReducer(state = [], action){
 		...state.slice(action.i + 1)
 
 		];
+		default:
+		return state;
+	}
+	return state;
+};
+
+export function authReducer(state = [], action){
+	switch(action.type){
+			case AUTH_USER:
+		return [...state,{
+			id: action.id,
+			}];
+		// 	case LOGOUT_USER:
+		// return [...state,{
+		// 	id: action.id,
+		// 	}];
 		default:
 		return state;
 	}

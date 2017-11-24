@@ -84,6 +84,6 @@ export const UserForm = (props) =>
                   <RaisedButton label="Register User" type="submit" onClick={props.submitForm} style={styles}/>
                 </MuiThemeProvider>
                 <MuiThemeProvider>
-                  <RaisedButton  label="LogIn" onClick={props.submitForm}/>
+                  <RaisedButton  label="LogIn" onClick={props.loginForm}/>
                 </MuiThemeProvider>
                 </form>
