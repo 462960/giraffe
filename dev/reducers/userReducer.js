@@ -14,10 +14,6 @@ export function userReducer(state = [], action){
 			name: action.name,
 			pass: action.pass
 			}];
-		// 	case AUTH_USER:
-		// return [...state,{
-		// 	id: action.id,
-		// 	}];
 		case ADD_ADV:
 		return [...state,{
 			id: action.id,
@@ -42,10 +38,8 @@ export function authReducer(state = [], action){
 		return [...state,{
 			id: action.id,
 			}];
-		// 	case LOGOUT_USER:
-		// return [...state,{
-		// 	id: action.id,
-		// 	}];
+			case LOGOUT_USER:
+		return [...state.slice(0,action.id)];
 		default:
 		return state;
 	}

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {UserForm} from './UserForm';
 
 
@@ -7,23 +8,23 @@ export class UserFormContainer extends React.Component{
 		super(props);
 		this.submitForm = this.submitForm.bind(this);
 		this.loginForm = this.loginForm.bind(this);
+		this.logoutForm = this.logoutForm.bind(this);
 		this.onChange = this.onChange.bind(this);
-		this.state = {
-			name: '',
-			pass: ''
-		}
+		// this.state = {
+		// 	name: '',
+		// 	pass: ''
+		// }
 	}
 	componentDidMount(){
 		this.focusForm.focus();
 	}
 	onChange(e){
-		this.setState({[e.target.id]: e.target.value})
+		this.setState({[e.target.name]: e.target.value})
 	}
 	submitForm(e){
 		e.preventDefault();
 		const {name, pass} = this.state;
 		this.props.addUser(name, pass);
-		console.log('I am Register!');
 		this.resetForm.reset();
 	}
 	loginForm(e){
@@ -34,18 +35,17 @@ export class UserFormContainer extends React.Component{
 		const i = users.findIndex(x => x.name == name);
 		const user = users[i];
 		// Authorise user
-		if (user.pass === pass) {
-			authUser(user.id)
-			console.log(`I'm passed!`);
-		} 
-		/*else if {
-			console.log(`No way man!`);
-		}*/
-		//console.log(`I am Login! ${i} ${users[i].pass}`);
+		(user.pass === pass) && authUser(user.id)
+		// Reset Form
 		this.resetForm.reset();
 	}
+	logoutForm(e){
+		e.preventDefault();
+		const {logged, logoutUser} = this.props;
+		logoutUser(logged[0].id);
+	}
 	render(){
-		const {name, pass} = this.state;
+		//const {name, pass} = this.state;
 		return (
 			<div>
 				<UserForm 
@@ -53,12 +53,21 @@ export class UserFormContainer extends React.Component{
 				onChange={this.onChange} 
 				submitForm={this.submitForm}
 				loginForm={this.loginForm}
+				logoutForm={this.logoutForm}
 				focusRef={el => this.focusForm = el} 
 				resetRef={el => this.resetForm = el} 
-				name={name}
-				pass={pass}
+				//name={name}
+				//pass={pass}
 				/>
 			</div>
 			)
 	}
 }
+
+UserFormContainer.propTypes = {
+                    addUser: PropTypes.func,
+                    authUser: PropTypes.func,
+                    logoutUser: PropTypes.func,
+                    users: PropTypes.array,
+                    logged: PropTypes.array
+                  }

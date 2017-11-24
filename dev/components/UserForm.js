@@ -1,5 +1,6 @@
 
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -69,14 +70,14 @@ export const UserForm = (props) =>
                       <TextField
                       onChange={props.onChange}
                       ref={props.focusRef}
-                      id="name"
+                      name="name"
                       />
                     </MuiThemeProvider>
                     </div><div>
                     <MuiThemeProvider>
                       <TextField
                       onChange={props.onChange}
-                      id="pass"
+                      name="pass"
                       />
                     </MuiThemeProvider>
                   </div>
@@ -84,6 +85,20 @@ export const UserForm = (props) =>
                   <RaisedButton label="Register User" type="submit" onClick={props.submitForm} style={styles}/>
                 </MuiThemeProvider>
                 <MuiThemeProvider>
-                  <RaisedButton  label="LogIn" onClick={props.loginForm}/>
+                  <RaisedButton  label="LogIn" onClick={props.loginForm} style={styles}/>
+                </MuiThemeProvider>
+                <MuiThemeProvider>
+                  <RaisedButton  label="LogOut" onClick={props.logoutForm}/>
                 </MuiThemeProvider>
                 </form>
+
+
+
+                UserForm.propTypes = {
+                    submitForm: PropTypes.func,
+                    loginForm: PropTypes.func,
+                    //logoutForm: PropTypes.func,
+                    onChange: PropTypes.func,
+                    resetRef: PropTypes.func,
+                    focusRef: PropTypes.func
+                  }
