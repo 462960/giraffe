@@ -87,9 +87,6 @@ export const UserForm = (props) =>
                 <MuiThemeProvider>
                   <RaisedButton  label="LogIn" onClick={props.loginForm} style={styles}/>
                 </MuiThemeProvider>
-                <MuiThemeProvider>
-                  <RaisedButton  label="LogOut" onClick={props.logoutForm}/>
-                </MuiThemeProvider>
                 </form>
 
 
@@ -97,7 +94,6 @@ export const UserForm = (props) =>
                 UserForm.propTypes = {
                     submitForm: PropTypes.func,
                     loginForm: PropTypes.func,
-                    //logoutForm: PropTypes.func,
                     onChange: PropTypes.func,
                     resetRef: PropTypes.func,
                     focusRef: PropTypes.func

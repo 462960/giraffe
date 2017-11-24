@@ -8,13 +8,14 @@ export class UserFormContainer extends React.Component{
 		super(props);
 		this.submitForm = this.submitForm.bind(this);
 		this.loginForm = this.loginForm.bind(this);
-		this.logoutForm = this.logoutForm.bind(this);
 		this.onChange = this.onChange.bind(this);
 		// this.state = {
 		// 	name: '',
 		// 	pass: ''
 		// }
+
 	}
+
 	componentDidMount(){
 		this.focusForm.focus();
 	}
@@ -29,20 +30,15 @@ export class UserFormContainer extends React.Component{
 	}
 	loginForm(e){
 		e.preventDefault();
-		const {users, authUser} = this.props;
+		const {users, authUser, logged} = this.props;
 		const {name, pass} = this.state;
 		// Find user index
 		const i = users.findIndex(x => x.name == name);
 		const user = users[i];
-		// Authorise user
-		(user.pass === pass) && authUser(user.id)
+		// Authorise user and prevent multiple logIn
+		(user.pass === pass && logged.length == 0) && authUser(user.id, user.name)
 		// Reset Form
 		this.resetForm.reset();
-	}
-	logoutForm(e){
-		e.preventDefault();
-		const {logged, logoutUser} = this.props;
-		logoutUser(logged[0].id);
 	}
 	render(){
 		//const {name, pass} = this.state;
@@ -53,7 +49,6 @@ export class UserFormContainer extends React.Component{
 				onChange={this.onChange} 
 				submitForm={this.submitForm}
 				loginForm={this.loginForm}
-				logoutForm={this.logoutForm}
 				focusRef={el => this.focusForm = el} 
 				resetRef={el => this.resetForm = el} 
 				//name={name}

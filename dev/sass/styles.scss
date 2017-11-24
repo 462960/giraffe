@@ -13,10 +13,10 @@ h2 {
 .none {display: none;}
 .block {display: block;}
 
-.wrapper {
-	max-width: 350px;
-	margin: 0 auto;
-}
+/* .wrapper {
+  max-width: 350px;
+  margin: 0 auto;
+} */
 
 .github {
   display: block;
@@ -27,6 +27,7 @@ h2 {
 
 .user-form {
   margin: 0 auto;
+  width: 400px;
   /* border: 1px solid green; */
 }
 
