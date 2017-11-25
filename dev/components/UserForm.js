@@ -7,85 +7,51 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { ValidatorForm } from 'react-form-validator-core';
 import { TextValidator} from 'react-material-ui-form-validator';
 
-// const styles = {
-//   formStyle: {
-//     width: '200px',
-//     margin: '0 auto'
-    //float: 'right',
-    //border: '1px solid green'
-//   },
-// };
 
 const styles = {
   marginRight: 12
 }
 
-
-
-//export const UserForm = (props) =>
-//                <ValidatorForm
-                //ref="form"
-                // ref={props.resetRef}
-                //onSubmit={props.submitForm}
-                //onError={errors => console.log(errors)}
-            // >
-            //    <MuiThemeProvider>
-            //     <TextValidator
-            //          floatingLabelText="User name"
-            //          onChange={props.onChange}
-            //          ref={props.resetRef}
-            //          ref={props.focusRef}
-            //          name="name"
-            //          value={props.name}
-            //          validators={['required']}
-            //          errorMessages={['this field is required']}
-            //       />
-            //      </MuiThemeProvider>
-            //      <MuiThemeProvider>
-            //     <TextValidator
-            //          floatingLabelText="Password"
-            //          onChange={props.onChange}
-            //          ref={props.resetRef}
-            //          name="pass"
-            //          value={props.pass}
-            //          validators={['required']}
-            //          errorMessages={['this field is required']}
-            //       />
-            //      </MuiThemeProvider>
-            //      <MuiThemeProvider>
-            //        <RaisedButton label="Register User" type="submit"  style={styles}/>                 
-            //       </MuiThemeProvider>
-            //      <MuiThemeProvider>
-            //        <RaisedButton  label="LogIn" />
-            //      </MuiThemeProvider>
-            // </ValidatorForm>
-
 export const UserForm = (props) =>
                 <form action="post"
-                ref={props.resetRef}
-                className="user-form"
+                  ref={props.resetRef}
+                  className="user-form"
                 >
                   <div>
                     <MuiThemeProvider>
                       <TextField
-                      onChange={props.onChange}
-                      ref={props.focusRef}
-                      name="name"
+                        floatingLabelText="User name"
+                        errorText={props.nameError}
+                        onChange={props.onChange}
+                        ref={props.focusRef}
+                        name="name"
                       />
                     </MuiThemeProvider>
                     </div><div>
                     <MuiThemeProvider>
                       <TextField
-                      onChange={props.onChange}
-                      name="pass"
+                        floatingLabelText="Password"
+                        errorText={props.passError}
+                        onChange={props.onChange}
+                        name="pass"
+                        type="password"
                       />
                     </MuiThemeProvider>
                   </div>
                 <MuiThemeProvider>
-                  <RaisedButton label="Register User" type="submit" onClick={props.submitForm} style={styles}/>
+                  <RaisedButton 
+                    label="Register User" 
+                    type="submit" 
+                    onClick={props.submitForm} 
+                    style={styles}
+                    />
                 </MuiThemeProvider>
                 <MuiThemeProvider>
-                  <RaisedButton  label="LogIn" onClick={props.loginForm} style={styles}/>
+                  <RaisedButton  
+                    label="LogIn" 
+                    onClick={props.loginForm} 
+                    style={styles}
+                    />
                 </MuiThemeProvider>
                 </form>
 

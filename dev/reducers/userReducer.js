@@ -40,7 +40,7 @@ export function authReducer(state = [], action){
 			name: action.name
 			}];
 			case LOGOUT_USER:
-		return [...state.slice(0,action.id)];
+		return [...state.slice(0,action.name)];
 		default:
 		return state;
 	}

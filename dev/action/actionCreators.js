@@ -18,19 +18,18 @@ export function addUser( name, pass){
 };
 
 // Authorise user
-export function authUser(id, name){
+export function authUser(name){
 	return {
 		type: AUTH_USER,
-		id,
 		name
 	}
 };
 
 // Logout user
-export function logoutUser(id){
+export function logoutUser(name){
 	return {
 		type: LOGOUT_USER,
-		id
+		name
 	}
 };
 
