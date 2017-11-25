@@ -4,7 +4,7 @@ import {
 	LOGOUT_USER, 
 	ADD_ADV, 
 	REMOVE_ADV
-	} from '../constants';
+	} from '../helpers/constants';
 
 export function userReducer(state = [], action){
 	switch(action.type){

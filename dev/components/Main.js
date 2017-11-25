@@ -1,6 +1,6 @@
 import React from 'react';
 import { TopBar} from './TopBar';
-import { ErrorBoundary} from './ErrorBoundary';
+import { ErrorBoundary} from '../helpers/ErrorBoundary';
 import { UserFormContainer} from './UserFormContainer';
 
 

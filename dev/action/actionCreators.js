@@ -5,7 +5,7 @@ import {
 	LOGOUT_USER, 
 	ADD_ADV, 
 	REMOVE_ADV,
-	} from '../constants';
+	} from '../helpers/constants';
 
 // Add user
 export function addUser( name, pass){
