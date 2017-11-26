@@ -2,8 +2,6 @@ import {
 	ADD_USER, 
 	AUTH_USER, 
 	LOGOUT_USER, 
-	ADD_ADV, 
-	REMOVE_ADV
 	} from '../helpers/constants';
 
 export function userReducer(state = [], action){
@@ -14,18 +12,6 @@ export function userReducer(state = [], action){
 			name: action.name,
 			pass: action.pass
 			}];
-		case ADD_ADV:
-		return [...state,{
-			id: action.id,
-			title: action.title,
-			description: action.description
-			}];
-		case REMOVE_ADV:
-		return [
-		...state.slice(0,action.i),
-		...state.slice(action.i + 1)
-
-		];
 		default:
 		return state;
 	}

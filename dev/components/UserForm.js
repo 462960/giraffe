@@ -15,7 +15,7 @@ const styles = {
 export const UserForm = (props) =>
                 <form action="post"
                   ref={props.resetRef}
-                  className="user-form"
+                  className="forms"
                 >
                   <div>
                     <MuiThemeProvider>

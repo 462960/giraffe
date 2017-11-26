@@ -7,11 +7,10 @@ export class AdvFormContainer extends React.Component{
 	constructor(props){
 		super(props);
 		this.submitForm = this.submitForm.bind(this);
-		this.loginForm = this.loginForm.bind(this);
 		this.onChange = this.onChange.bind(this);
 		this.state = {
-			nameError: '',
-			passError: ''
+			titleError: '',
+			textError: ''
 		}
 
 	}
@@ -26,69 +25,53 @@ export class AdvFormContainer extends React.Component{
 
 	submitForm(e){
 		e.preventDefault();
-		const {name, pass} = this.state;
-		const {users, addUser, authUser} = this.props;
-		// To prevent doubled registration, allowed only non existing names
-		const i = users.findIndex(x => x.name === name);
-		if (i === -1 && name && pass){
-			addUser(name, pass);
-			authUser(name);
-		} else if (i >= 0){
-			this.setState({
-				nameError: 'No way, user exists!'
-			});
+		const {title, text} = this.state;
+		const {logged, addAdv} = this.props;
+		//const author = logged[0].name;
+		const author = 'Volodymyr';
+		console.log(title, text);
+		if ( title && text){
+			addAdv(author, title, text);
 			setTimeout(() => {
     			this.setState({
-        			nameError: ''
+        			title: '',
+        			text: ''
     			})
 		 	}, 2000);
-		} else if (!name){
+		} else if (!title){
 			this.setState({
-				nameError: 'Please, enter your name!'
+				titleError: 'Please, enter title!'
 			});
 			setTimeout(() => {
     			this.setState({
-        			nameError: ''
+        			titleError: ''
     			})
 		 	}, 2000);
-		}else if (!pass){
+		} else if (!text){
 			this.setState({
-				passError: 'Password required!'
+				textError: 'Please, enter the text!'
 			});
 			setTimeout(() => {
     			this.setState({
-        			passError: ''
+        			textError: ''
     			})
 		 	}, 2000);
 		} 
 		this.resetForm.reset();
 	}
 
-	loginForm(e){
-		e.preventDefault();
-		const {users, authUser, logged} = this.props;
-		const {name, pass} = this.state;
-		// Find user index
-		const i = users.findIndex(x => x.name == name);
-		const user = users[i];
-		// Authorize and logIn user 
-		user.pass === pass && authUser(user.name)
-		// Reset Form
-		this.resetForm.reset();
-	}
 	render(){
-		const {nameError, passError} = this.state;
+		const {titleError, textError} = this.state;
 		return (
 			<div>
 				<AdvForm 
 				{...this.props}
 				onChange={this.onChange} 
 				submitForm={this.submitForm}
-				loginForm={this.loginForm}
 				focusRef={el => this.focusForm = el} 
 				resetRef={el => this.resetForm = el} 
-				nameError={nameError}
-				passError={passError}
+				titleError={titleError}
+				textError={textError}
 				/>
 			</div>
 			)

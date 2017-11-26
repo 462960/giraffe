@@ -34,12 +34,15 @@ export function logoutUser(name){
 };
 
 // Add adv
-export function addAdv( title, description){
+const date = new Date().toLocaleDateString();
+export function addAdv(author, title, text){
 	return {
-		type: ADD_USER,
+		type: ADD_ADV,
 		id: v4(),
+		date,
+		author,
 		title,
-		description
+		text
 	}
 };
 

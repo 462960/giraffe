@@ -5,51 +5,54 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-const styles = {
-  marginRight: 12
-}
+// const styles = {
+//   marginRight: 12
+// }
 
 export const AdvForm = (props) =>
                 <form action="post"
                   ref={props.resetRef}
-                  className="user-form"
+                  className="forms"
                 >
                   <div>
                     <MuiThemeProvider>
                       <TextField
-                        floatingLabelText="User name"
-                        errorText={props.nameError}
+                        floatingLabelText="Title"
+                        errorText={props.titleError}
                         onChange={props.onChange}
                         ref={props.focusRef}
-                        name="name"
+                        name="title"
+                        type="text"
                       />
                     </MuiThemeProvider>
                     </div><div>
                     <MuiThemeProvider>
                       <TextField
-                        floatingLabelText="Password"
-                        errorText={props.passError}
+                        floatingLabelText="Description"
+                        multiLine={true}
+                        rows={3}
+                        errorText={props.textError}
                         onChange={props.onChange}
-                        name="pass"
-                        type="password"
+                        name="text"
+                        type="text"
                       />
                     </MuiThemeProvider>
                   </div>
                 <MuiThemeProvider>
                   <RaisedButton 
-                    label="Register User" 
+                    label="Submit Adv" 
                     type="submit" 
                     onClick={props.submitForm} 
-                    style={styles}
+                    //style={styles}
                     />
                 </MuiThemeProvider>
-                <MuiThemeProvider>
+               {/* <MuiThemeProvider>
                   <RaisedButton  
                     label="LogIn" 
                     onClick={props.loginForm} 
                     style={styles}
                     />
-                </MuiThemeProvider>
+                </MuiThemeProvider>*/}
                 </form>
 
 

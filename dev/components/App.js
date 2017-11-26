@@ -8,6 +8,7 @@ function mapStateToProps(state){
 	return {
      users: state.userReducer,
      logged: state.authReducer,
+     adverts: state.advertReducer
 	}
 };
 
