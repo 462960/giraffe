@@ -5,6 +5,7 @@ import { ErrorBoundary} from '../helpers/ErrorBoundary';
 import { UserFormContainer} from './UserFormContainer';
 import { Routes} from './Routes';
 import { CreateAdvLink} from './CreateAdvLink';
+import {AdvFormContainer} from './AdvFormContainer';
 
 
 export let Main = (props) => {
@@ -12,8 +13,9 @@ export let Main = (props) => {
 	return 	(<div className="wrapper">
 				<ErrorBoundary>
 					<TopBar {...props}/>
-					{logged.length == 0 ? <UserFormContainer {...props}/> : <Routes {...props}/>}
-					<AdvUnit/>
+					{/*{logged.length == 0 ? <UserFormContainer {...props}/> : <Routes {...props}/>}*/}
+					{/*<AdvUnit/>*/}
+					<AdvFormContainer {...props}/>
 				</ErrorBoundary>
 			</div>)
             }

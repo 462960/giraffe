@@ -5,11 +5,11 @@ import {
   HashRouter
 } from 'react-router-dom';
 import {CreateAdvLink} from './CreateAdvLink';
-import {CreateAdvForm} from './CreateAdvForm';
+import {AdvFormContainer} from './AdvFormContainer';
 
 
 export const Routes = (props) =>
                   		<Switch>
-                  		  <Route exact path='/advert' render={props => <CreateAdvForm {...props}/>}/>
+                  		  <Route exact path='/advert' render={props => <AdvFormContainer {...props}/>}/>
                   		  <Route path='/' render={props => <CreateAdvLink {...props}/>}/>
                   		</Switch>
