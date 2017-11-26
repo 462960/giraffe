@@ -1,88 +1,44 @@
 @import "normalize";
   
-/*   body {
-background-color: #A1C5AA;
-} */
-.paper-wrap { 
-  height: 100px;
-  width: 20%;
-  margin: 20px;
- /*  text-align: center; */
-  display: inline-block;
-}
-.paper {border: 1px solid red;}
-
-.advert-link {display: block;}
-
-
-
-
-
-
-
-li {list-style: none;}
-
-h2 {
-	text-align: center;
-}
-
 .none {display: none;}
-.block {display: block;}
 
-/* .wrapper {
-  max-width: 350px;
+.wrapper {min-width: 270px;}
+
+/* Advert Units style */
+.adv-wrapper {
+  width: 95%;
   margin: 0 auto;
-} */
-
-.github {
-  display: block;
-  text-align: center;
-  padding: 15px 0;
-  color: #000;
-}
-
-.forms {
-  margin: 0 auto;
-  width: 260px;
-}
-
-/* .adv-form {
-  margin: 0 auto;
-  width: 260px;
-} */
-
-
-/* Product items */
-ul.prod_holder {
-  & > li {
-  padding: 5px 5px 5px 20px;
-  height: 20px;
-  transition: box-shadow 0.5s;
-  &:hover {
-   box-shadow: 10px 10px 5px 0px rgba(  144, 177, 153,0.75);
-   border-left: 1px solid #90b199;
-   border-top: 1px solid #90b199;
-    .remove-prod {
-      opacity: 1;
-    }
+  @media (min-width: 500px){
+    width: 80%;
   }
- }
 }
 
-ul.colors_holder {
-  display: flex;
+.adv-unit {
+  padding: 15px;
+  margin: 10px 0;
+  h6 {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  p {
+    font-size: 12px;
+    margin: 10px 0;
+    text-align: center;
+  }
+    .remove-adv {
+  background: none;
   float: right;
-  margin-right: 20px;
-  width: 50px;
-  height: 100%;
-  transform: skewX(-35deg);
-  & > li {
-    flex: 1;
-    height: 100%;
+  border: none;
+  line-height: 1;
+  color: #000;
+  transition: transform 0.5s;
+  margin-top: 2px;
+  outline: none;
+  &:hover {
+   color: red;
+   transform: rotate(-90deg);
+ }
   }
-  & > li.red {background: #E73C3C;}
-  & > li.green {background: #54E438;}
-  & > li.blue {background: #4860D8;}
 }
 
 .remove-prod {
@@ -100,3 +56,30 @@ ul.colors_holder {
    transform: rotate(-90deg);
  }
 }
+
+.advert-link {display: block;}
+
+/* Forms styles */
+.forms {
+  margin: 0 auto;
+  width: 260px;
+}
+
+
+/* Consider it to style the AvUnit buttons bar */
+/* ul.prod_holder {
+  & > li {
+  padding: 5px 5px 5px 20px;
+  height: 20px;
+  transition: box-shadow 0.5s;
+  &:hover {
+   box-shadow: 10px 10px 5px 0px rgba(  144, 177, 153,0.75);
+   border-left: 1px solid #90b199;
+   border-top: 1px solid #90b199;
+    .remove-prod {
+      opacity: 1;
+    }
+  }
+ }
+} */
+

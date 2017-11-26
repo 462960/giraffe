@@ -47,10 +47,10 @@ export function addAdv(author, title, text){
 };
 
 // Remove adv
-export function removeAdv(id, i){
+export function removeAdv(adverts, i){
 	return{
 		type: REMOVE_ADV,
-		id,
+		adverts,
 		i
 	}
 };
