@@ -7,15 +7,18 @@ import { App } from './components/App';
 import { Main } from './components/Main';
 import {saveState} from './helpers/localStorage';
 import throttle from 'lodash/throttle';
+import {HashRouter} from 'react-router-dom';
 
 // store.subscribe(throttle(() => {
 // 	saveState(store.getState());
 // }, 1000));
 
 const wrap = (
-	<Provider store={store}>
-		<App/>
-	</Provider>
+	<HashRouter>
+		<Provider store={store}>
+				<App/>
+		</Provider>
+	</HashRouter>
 	);
 
 
