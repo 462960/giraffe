@@ -76,7 +76,7 @@ export class UserFormContainer extends React.Component{
 			authUser(user.name)
 		} else {
 			this.setState({
-				nameError: 'Something went wrong!'
+				nameError: 'Something went wrong...'
 			});
 			setTimeout(() => {
     			this.setState({

@@ -5,7 +5,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-export const AdvForm = (props) =>{
+export const AdvForm = (props) => {
                 const {
                       logged, 
                       titleError, 

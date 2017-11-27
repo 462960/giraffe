@@ -12,7 +12,7 @@ export const TopBar = (props) => {
 			<div>
 				<MuiThemeProvider>
 					<AppBar 
-					title={logged.length !== 0 ? `Hello, ${logged[0].name}, nice to see you!` : `Hello, visitor!`}
+					title={logged.length !== 0 ? `Nice to see you, ${logged[0].name}!` : `Hello, visitor!`}
 					 iconElementRight={logged.length !== 0 ? <FlatButton label="Logout" onClick={logOut}/> : <IconButton/>} 
 					 iconElementLeft={<IconButton href="https://github.com/462960/giraffe" target="blank"><GitHubIcon/></IconButton>}
 					/>
