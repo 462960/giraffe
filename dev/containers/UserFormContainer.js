@@ -72,28 +72,18 @@ export class UserFormContainer extends React.Component{
 		const i = users.findIndex(x => x.name == name);
 		const user = users[i];
 		// Authorize and logIn user 
-		if (user.pass === pass) {
+		if (i >= 0 && user.pass === pass) {
 			authUser(user.name)
-		} else if (!pass || (user.pass !== pass)){
+		} else {
 			this.setState({
-				passError: 'Valid password required!'
+				nameError: 'Something went wrong!'
 			});
 			setTimeout(() => {
     			this.setState({
-        			passError: ''
+        			nameError: ''
     			})
-		 	}, 2000);
+		 	}, 2000); 
 		} 
-		// else if (!name || !pass) {
-		// 	this.setState({
-		// 		nameError: 'User name required!'
-		// 	});
-		// 	setTimeout(() => {
-  //   			this.setState({
-  //       			nameError: ''
-  //   			})
-		//  	}, 2000);
-		// }
 		// Reset Form
 		this.resetForm.reset();
 	}

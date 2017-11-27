@@ -12,7 +12,6 @@ export class AdvFormContainer extends React.Component{
 			titleError: '',
 			textError: ''
 		}
-
 	}
 
 	componentDidMount(){
@@ -28,7 +27,6 @@ export class AdvFormContainer extends React.Component{
 		const {title, text} = this.state;
 		const {logged, addAdv} = this.props;
 		const author = logged[0].name;
-		console.log(title, text);
 		if ( title && text){
 			addAdv(author, title, text);
 			setTimeout(() => {
@@ -38,12 +36,14 @@ export class AdvFormContainer extends React.Component{
     			})
 		 	}, 2000);
 		} else if (!title){
+
 			this.setState({
 				titleError: 'Please, enter title!'
 			});
 			setTimeout(() => {
     			this.setState({
-        			titleError: ''
+        			titleError: '',
+        			text: ''
     			})
 		 	}, 2000);
 		} else if (!text){
@@ -52,7 +52,8 @@ export class AdvFormContainer extends React.Component{
 			});
 			setTimeout(() => {
     			this.setState({
-        			textError: ''
+        			textError: '',
+        			title: ''
     			})
 		 	}, 2000);
 		} 
