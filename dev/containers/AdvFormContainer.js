@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {AdvForm} from './AdvForm';
+import {AdvForm} from '../components/AdvForm';
 
 
 export class AdvFormContainer extends React.Component{
@@ -27,8 +27,7 @@ export class AdvFormContainer extends React.Component{
 		e.preventDefault();
 		const {title, text} = this.state;
 		const {logged, addAdv} = this.props;
-		//const author = logged[0].name;
-		const author = 'Volodymyr';
+		const author = logged[0].name;
 		console.log(title, text);
 		if ( title && text){
 			addAdv(author, title, text);
@@ -78,10 +77,7 @@ export class AdvFormContainer extends React.Component{
 	}
 }
 
-// AdvFormContainer.propTypes = {
-//                     addUser: PropTypes.func,
-//                     authUser: PropTypes.func,
-//                     logoutUser: PropTypes.func,
-//                     users: PropTypes.array,
-//                     logged: PropTypes.array
-//                   }
+AdvFormContainer.propTypes = {
+                    addAdv: PropTypes.func,
+                    logged: PropTypes.array
+                  }

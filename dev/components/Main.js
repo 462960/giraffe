@@ -1,21 +1,22 @@
 import React from 'react';
-import { TopBar} from './TopBar';
 import { ErrorBoundary} from '../helpers/ErrorBoundary';
-import { UserFormContainer} from './UserFormContainer';
 import { Routes} from './Routes';
-//import { CreateAdvLink} from './CreateAdvLink';
-import {AdvFormContainer} from './AdvFormContainer';
-import { AdvUnitContainer } from './AdvUnitContainer';
+import { TopBarContainer} from '../containers/TopBarContainer';
+import {AdvFormContainer} from '../containers/AdvFormContainer';
+import { AdvUnitContainer } from '../containers/AdvUnitContainer';
+import { UserFormContainer} from '../containers/UserFormContainer';
 
 
 export let Main = (props) => {
 	const {logged} = props;
 	return 	(<div className="wrapper">
 				<ErrorBoundary>
-					<TopBar {...props}/>
-					{logged.length == 0 ? <UserFormContainer {...props}/> : <Routes {...props}/>}
+					<TopBarContainer {...props}/>
+					{/*{logged.length == 0 ? <UserFormContainer {...props}/> : <Routes {...props}/>}*/}
 					
-					{/*<AdvFormContainer {...props}/>*/}
+					{logged.length == 0 ? 
+						<UserFormContainer {...props}/> 
+						: <AdvFormContainer {...props}/>}
 					<AdvUnitContainer {...props}/>
 				</ErrorBoundary>
 			</div>)

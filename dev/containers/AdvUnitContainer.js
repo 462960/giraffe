@@ -1,5 +1,6 @@
 import React from 'react';
-import { AdvUnit } from './AdvUnit';
+import PropTypes from 'prop-types';
+import { AdvUnit } from '../components/AdvUnit';
 
 
 export class AdvUnitContainer extends React.Component{
@@ -19,4 +20,9 @@ export class AdvUnitContainer extends React.Component{
 			)
 	}
 }
+
+
+AdvUnitContainer.propTypes = {
+                    adverts: PropTypes.array
+                  }
 

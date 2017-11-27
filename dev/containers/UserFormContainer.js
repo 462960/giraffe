@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {UserForm} from './UserForm';
+import {UserForm} from '../components/UserForm';
 
 
 export class UserFormContainer extends React.Component{
@@ -72,7 +72,28 @@ export class UserFormContainer extends React.Component{
 		const i = users.findIndex(x => x.name == name);
 		const user = users[i];
 		// Authorize and logIn user 
-		user.pass === pass && authUser(user.name)
+		if (user.pass === pass) {
+			authUser(user.name)
+		} else if (!pass || (user.pass !== pass)){
+			this.setState({
+				passError: 'Valid password required!'
+			});
+			setTimeout(() => {
+    			this.setState({
+        			passError: ''
+    			})
+		 	}, 2000);
+		} 
+		// else if (!name || !pass) {
+		// 	this.setState({
+		// 		nameError: 'User name required!'
+		// 	});
+		// 	setTimeout(() => {
+  //   			this.setState({
+  //       			nameError: ''
+  //   			})
+		//  	}, 2000);
+		// }
 		// Reset Form
 		this.resetForm.reset();
 	}
@@ -98,7 +119,6 @@ export class UserFormContainer extends React.Component{
 UserFormContainer.propTypes = {
                     addUser: PropTypes.func,
                     authUser: PropTypes.func,
-                    logoutUser: PropTypes.func,
                     users: PropTypes.array,
                     logged: PropTypes.array
                   }

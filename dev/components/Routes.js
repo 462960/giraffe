@@ -5,7 +5,7 @@ import {
   HashRouter
 } from 'react-router-dom';
 import {CreateAdvLink} from './CreateAdvLink';
-import {AdvFormContainer} from './AdvFormContainer';
+import {AdvFormContainer} from '../containers/AdvFormContainer';
 
 
 export const Routes = (props) =>
