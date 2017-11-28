@@ -6,5 +6,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 export const CreateAdvLink = () =>
 							<div className="create-link">
-									<Link className="advert-link" to="/advert" replace >Create Advertisement</Link>
+								I am CreateAdvLink
+									<Link className="advert-link" to="/" replace >To AdvFormContainer</Link>
 							</div>

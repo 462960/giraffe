@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 import Paper from 'material-ui/Paper';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -28,7 +29,7 @@ export class AdvUnit extends React.Component {
 									<h6>{item.title}</h6>
 									<p>{item.text}</p>
 									<div className={(logged.length !== 0) && (logged[0].name == item.author) ? '' : 'none' }>
-										<button>Edit</button>
+										<Link className="" to="/edit" replace >Edit</Link>
 										<button 
 										className="remove-adv"
 										onClick={this.handleModal}

@@ -14,11 +14,11 @@ import {HashRouter} from 'react-router-dom';
 // }, 1000));
 
 const wrap = (
-	<HashRouter>
 		<Provider store={store}>
-				<App/>
+				<HashRouter>
+					<App/>
+				</HashRouter>
 		</Provider>
-	</HashRouter>
 	);
 
 
