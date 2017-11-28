@@ -22,7 +22,6 @@ export function authReducer(state = [], action){
 	switch(action.type){
 			case AUTH_USER:
 		return [...state,{
-			id: action.id,
 			name: action.name
 			}];
 			case LOGOUT_USER:

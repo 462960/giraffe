@@ -8,5 +8,10 @@ export const userReducer = [
       "id":"BAcmJhytcXX",
       "name":"Bob",
       "pass": "4567"
+  },
+   {
+      "id":"BAcmJhytcXX",
+      "name":"q",
+      "pass": "1"
   }
    ];

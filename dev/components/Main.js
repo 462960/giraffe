@@ -2,7 +2,7 @@ import React from 'react';
 import { ErrorBoundary} from '../helpers/ErrorBoundary';
 import { Routes} from './Routes';
 import { Invitation} from './Invitation';
-//import { DeleteAlert} from './DeleteAlert';
+import { DeleteAlert} from './DeleteAlert';
 import { TopBarContainer} from '../containers/TopBarContainer';
 import {AdvFormContainer} from '../containers/AdvFormContainer';
 import { AdvUnitContainer } from '../containers/AdvUnitContainer';
@@ -13,7 +13,7 @@ export let Main = (props) => {
 	const {logged, adverts} = props;
 	return 	(<div className="wrapper">
 				<ErrorBoundary>
-					{/*<DeleteAlert/>*/}
+					<DeleteAlert {...props}/>
 					<TopBarContainer {...props}/>
 					{/*{logged.length == 0 ? <UserFormContainer {...props}/> : <Routes {...props}/>}*/}
 					

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -8,23 +9,23 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 export class DeleteAlert extends React.Component {
   constructor(props){
     super(props);
-    this.handleOpen = this.handleOpen.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
     this.handleClose = this.handleClose.bind(this);
-     this.state = {
-    open: false
-  };
   }
- 
-
-  handleOpen() {
-    this.setState({open: true});
-  };
 
   handleClose() {
-    this.setState({open: false});
+     const {hideModal, logged} = this.props;
+     hideModal(logged[0].name);
+  };
+
+  handleDelete() {
+    const {hideModal, removeAdv, adverts, modal, logged} = this.props;
+    removeAdv(adverts, modal[0].i);
+    hideModal(logged[0].name);
   };
 
   render() {
+    const {modal, logged} = this.props;
     const actions = [
       <FlatButton
         label="Cancel"
@@ -32,28 +33,33 @@ export class DeleteAlert extends React.Component {
         onClick={this.handleClose}
       />,
       <FlatButton
-        label="Yes, delete!"
+        label="Yes, delete, please!"
         primary={true}
-        onClick={this.handleClose}
+        onClick={this.handleDelete}
       />,
     ];
 
     return (
       <div className="delete-alert">
         <MuiThemeProvider>
-          <RaisedButton label="Alert" onClick={this.handleOpen} />
-        </MuiThemeProvider>
-        <MuiThemeProvider>
           <Dialog
             actions={actions}
             modal={false}
-            open={this.state.open}
+            open={modal.length == 0 ? false : true}
             onRequestClose={this.handleClose}
           >
-            Are you sure?
+            {logged.length !== 0 ? `${logged[0].name}, are you sure?` : ``}
           </Dialog>
         </MuiThemeProvider>
       </div>
     );
   }
 }
+
+ DeleteAlert.propTypes = {
+                    adverts: PropTypes.array,
+                    modal: PropTypes.array,
+                    logged: PropTypes.array,
+                    removeAdv: PropTypes.func,
+                    hideModal: PropTypes.func
+                  }

@@ -5,6 +5,8 @@ import {
 	LOGOUT_USER, 
 	ADD_ADV, 
 	REMOVE_ADV,
+	SHOW_MODAL, 
+	HIDE_MODAL 
 	} from '../helpers/constants';
 
 // Add user
@@ -52,5 +54,23 @@ export function removeAdv(adverts, i){
 		type: REMOVE_ADV,
 		adverts,
 		i
+	}
+};
+
+// Show modal
+export function showModal(name,  i ){
+	return{
+		type: SHOW_MODAL,
+		name,
+		i
+
+	}
+}
+
+// Hide modal
+export function hideModal(name){
+	return{
+		type: HIDE_MODAL,
+		name
 	}
 };

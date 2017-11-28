@@ -2,7 +2,7 @@ export const advertReducer = [
    {
       "id":"BAcyDyQwcXX",
       "date":"02/28/2004",
-      "author":"Lunch",
+      "author":"q",
       "title": "My suprime text",
       "text":"This is advertisement"
    },

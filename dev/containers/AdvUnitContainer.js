@@ -8,6 +8,7 @@ export class AdvUnitContainer extends React.Component{
 		super(props);
 	}
 
+
 	render(){
 		const {adverts} = this.props;
 		const advertItems = adverts.map((item, i) => 
