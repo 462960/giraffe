@@ -35,6 +35,7 @@ export class AdvFormContainer extends React.Component{
         			text: ''
     			})
 		 	}, 2000);
+		 	this.resetForm.reset();
 		} else if (!title){
 
 			this.setState({
@@ -57,7 +58,7 @@ export class AdvFormContainer extends React.Component{
     			})
 		 	}, 2000);
 		} 
-		this.resetForm.reset();
+		
 	}
 
 	render(){

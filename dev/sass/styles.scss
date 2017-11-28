@@ -32,7 +32,7 @@
   line-height: 1;
   color: #000;
   transition: transform 0.5s;
-  margin-top: 2px;
+  margin-top: 20px;
   outline: none;
   &:hover {
    color: red;
@@ -41,45 +41,14 @@
   }
 }
 
-.remove-prod {
-  background: none;
-  float: right;
-  border: none;
-  line-height: 1;
-  color: #000;
-  opacity: 0;
-  transition: transform 0.5s;
-  margin-top: 2px;
-  outline: none;
-  &:hover {
-   color: red;
-   transform: rotate(-90deg);
- }
+.paginators {
+  width: 205px;
+  margin: 20px auto;
 }
-
-.advert-link {display: block;}
 
 /* Forms styles */
 .forms {
-  margin: 0 auto;
+  margin: 15px auto;
   width: 260px;
 }
-
-
-/* Consider it to style the AvUnit buttons bar */
-/* ul.prod_holder {
-  & > li {
-  padding: 5px 5px 5px 20px;
-  height: 20px;
-  transition: box-shadow 0.5s;
-  &:hover {
-   box-shadow: 10px 10px 5px 0px rgba(  144, 177, 153,0.75);
-   border-left: 1px solid #90b199;
-   border-top: 1px solid #90b199;
-    .remove-prod {
-      opacity: 1;
-    }
-  }
- }
-} */
 

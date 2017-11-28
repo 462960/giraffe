@@ -16,51 +16,53 @@ export const AdvForm = (props) => {
                       submitForm
                                 } = props;
                return  (<form action="post"
-                                  ref={resetRef}
-                                  className="forms"
-                                >
-                                  <div>
-                                    <MuiThemeProvider>
-                                      <TextField
-                                        floatingLabelText="Title"
-                                        errorText={titleError}
-                                        onChange={onChange}
-                                        ref={focusRef}
-                                        name="title"
-                                        type="text"
-                                      />
-                                    </MuiThemeProvider>
-                                    </div><div>
-                                    <MuiThemeProvider>
-                                      <TextField
-                                        floatingLabelText="Description"
-                                        multiLine={true}
-                                        rows={3}
-                                        errorText={textError}
-                                        onChange={onChange}
-                                        name="text"
-                                        type="text"
-                                      />
-                                    </MuiThemeProvider>
-                                  </div>
-                                <MuiThemeProvider>
-                                  <RaisedButton 
-                                    label={logged.length !== 0 ? `Create Adv, ${logged[0].name}` : `` } 
-                                    type="submit" 
-                                    onClick={submitForm} 
-                                    />
-                                </MuiThemeProvider>
-                                </form>)
+                          ref={resetRef}
+                          className="forms"
+                          >
+                          <div>
+                            <MuiThemeProvider>
+                              <TextField
+                                floatingLabelText="Title"
+                                errorText={titleError}
+                                onChange={onChange}
+                                ref={focusRef}
+                                name="title"
+                                type="text"
+                              />
+                            </MuiThemeProvider>
+                          </div>
+                          <div>
+                            <MuiThemeProvider>
+                              <TextField
+                                floatingLabelText="Description"
+                                multiLine={true}
+                                rows={3}
+                                errorText={textError}
+                                onChange={onChange}
+                                name="text"
+                                type="text"
+                              />
+                            </MuiThemeProvider>
+                          </div>
+                          <MuiThemeProvider>
+                            <RaisedButton 
+                              label={logged.length !== 0 ? `Create Adv, ${logged[0].name}` : `` } 
+                              type="submit"
+                              primary={true} 
+                              onClick={submitForm} 
+                              />
+                          </MuiThemeProvider>
+                        </form>)
              }
 
 
 
                 AdvForm.propTypes = {
-                    submitForm: PropTypes.func,
-                    onChange: PropTypes.func,
-                    resetRef: PropTypes.func,
-                    focusRef: PropTypes.func,
+                    submitForm: PropTypes.func.isRequired,
+                    onChange: PropTypes.func.isRequired,
+                    resetRef: PropTypes.func.isRequired,
+                    focusRef: PropTypes.func.isRequired,
                     logged: PropTypes.array,
-                    titleError: PropTypes.string, 
-                    textError: PropTypes.string
+                    titleError: PropTypes.string.isRequired, 
+                    textError: PropTypes.string.isRequired
                   }

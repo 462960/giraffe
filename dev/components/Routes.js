@@ -1,14 +1,11 @@
 import React from 'react';
-import {
-  Switch,
-  Route,
-} from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { Switch, Route } from 'react-router-dom';
 import {Main} from './Main';
 import {AdvFormEditContainer} from '../containers/AdvFormEditContainer';
 import { ErrorBoundary} from '../helpers/ErrorBoundary';
 import { TopBarContainer} from '../containers/TopBarContainer';
 import { DeleteAlert} from './DeleteAlert';
-//import { CreateAdvLink} from './CreateAdvLink';
 
 
 export const Routes = (props) => {
@@ -33,9 +30,13 @@ export const Routes = (props) => {
 			<DeleteAlert {...props}/>
 			<TopBarContainer {...props}/>
       <Switch>
-        <Route exact path='/edit' render={props => 
+        <Route exact path='/:id' render={props => 
           <AdvFormEditContainer 
           {...props}
+          logged={logged}
+          addAdv={addAdv}
+          removeAdv={removeAdv}
+          adverts={adverts}
           />}/>
         <Route path='/' render={props => 
           <Main 
@@ -56,3 +57,18 @@ export const Routes = (props) => {
     </ErrorBoundary>
   </div>
         )}
+
+
+  Routes.propTypes = {
+    adverts: PropTypes.array, 
+    users: PropTypes.array, 
+    logged: PropTypes.array,
+    logoutUser: PropTypes.func,
+    addAdv: PropTypes.func,
+    addUser: PropTypes.func,
+    authUser: PropTypes.func,
+    hideModal: PropTypes.func,
+    showModal: PropTypes.func,
+    modal: PropTypes.array,
+    removeAdv: PropTypes.func
+  }

@@ -47,7 +47,8 @@ export const UserForm = (props) => {
                                   </div>
                                 <MuiThemeProvider>
                                   <RaisedButton 
-                                    label="Register User" 
+                                    label="Register User"
+                                    primary={true} 
                                     type="submit" 
                                     onClick={submitForm} 
                                     style={styles}
@@ -55,9 +56,9 @@ export const UserForm = (props) => {
                                 </MuiThemeProvider>
                                 <MuiThemeProvider>
                                   <RaisedButton  
-                                    label="LogIn" 
+                                    label="LogIn"
+                                    primary={true} 
                                     onClick={loginForm} 
-                                    style={styles}
                                     />
                                 </MuiThemeProvider>
                                 </form>)
