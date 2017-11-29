@@ -4,5 +4,7 @@ dist
 webpack-bundle-analyzer-DEV-report.html
 sandbox
 README.mdn
+data
+favicon.ico
 
 

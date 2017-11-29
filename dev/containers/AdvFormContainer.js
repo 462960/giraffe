@@ -46,8 +46,7 @@ export class AdvFormContainer extends React.Component {
       });
       setTimeout(() => {
         this.setState({
-          titleError: '',
-          text: ''
+          titleError: ''
         })
       }, 2000);
     } else if (!text) {
@@ -56,8 +55,7 @@ export class AdvFormContainer extends React.Component {
       });
       setTimeout(() => {
         this.setState({
-          textError: '',
-          title: ''
+          textError: ''
         })
       }, 2000);
     }

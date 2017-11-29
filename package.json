@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --history-api-fallback ",
-    "test": "webpack --config webpack.config.prod.js -p"
+    "prod": "webpack --config webpack.config.prod.js -p"
   },
   "repository": {
     "type": "git",

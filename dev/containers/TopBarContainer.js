@@ -13,7 +13,7 @@ export class TopBarContainer extends React.Component {
     e.preventDefault();
     const {logged, logoutUser, history} = this.props;
     logoutUser(logged[0].name);
-    (function() {
+    (function backHome() {
       history.replace('/')
     })();
   }

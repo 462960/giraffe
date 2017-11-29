@@ -53,7 +53,7 @@ export class AdvUnitContainer extends React.Component{
                       label="Back"
                       primary={true}
                       style={styles} 
-                      disabled={end <= 5 ? true : false} 
+                      disabled={end < 6 ? true : false} 
                       onClick={this.pageBack}
                       />
                 </MuiThemeProvider>

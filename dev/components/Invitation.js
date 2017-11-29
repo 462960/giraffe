@@ -13,6 +13,7 @@ export const Invitation = (props) => <div className="adv-wrapper">
     `Create your first adv, ${props.logged[0].name}!`
     : `Join us, visitor! There is no advertisement yet...`}
 									</h3>
+									<p>Having more than 5 items of advertisement enables pagination</p>
 								</Paper>
 							</MuiThemeProvider>
 						</div>

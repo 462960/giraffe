@@ -4,13 +4,14 @@ import { loadState } from './helpers/localStorage';
 
 const persistedState = loadState();
 
-// Data for demonstration purpose
+// Dummi data
 import { advertReducer } from './data/adverts';
 import { userReducer } from './data/users';
-const defaultState = {
+
+const initialState = {
   advertReducer,
   userReducer
-};
+}
 
 const enhancers = compose(
   window.devToolsExtension && window.devToolsExtension()
@@ -18,7 +19,7 @@ const enhancers = compose(
 
 export const store = createStore(
   rootReducer,
-  //defaultState, 
   //persistedState, 
+  initialState,
   enhancers
 );
