@@ -1,10 +1,12 @@
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { AdvUnit } from '../components/AdvUnit';
 import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-const styles = {
+
+ const styles = {
   marginRight: 12
 }
 
@@ -45,7 +47,7 @@ export class AdvUnitContainer extends React.Component{
 			<div className="adv-wrapper">
 				{advertItems}
 			<div className={adverts.length >= 6 ? `painators-wrapper` : `none`}>
-			<div className="paginators">
+			<div className="pagination">
 				<MuiThemeProvider>
                     <RaisedButton 
                       label="Back"

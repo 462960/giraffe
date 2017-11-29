@@ -5,18 +5,20 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 
 
-export const Invitation = (props) => 
-						<div className="adv-wrapper">
+export const Invitation = (props) => <div className="adv-wrapper">
 							<MuiThemeProvider>
 								<Paper className="adv-unit" zDepth={2}>
 									<h3>
-										{props.logged.length !== 0 ? 
-										`Create your first adv, ${props.logged[0].name}!` 
-										: `Join us, visitor! There is no advertisement yet...`}
+										{props.logged.length !== 0 ?
+    `Create your first adv, ${props.logged[0].name}!`
+    : `Join us, visitor! There is no advertisement yet...`}
 									</h3>
 								</Paper>
 							</MuiThemeProvider>
 						</div>
 
-						
+Invitation.propTypes = {
+  logged: PropTypes.array
+}
+
 

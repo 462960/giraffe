@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "later"
+    "url": "https://github.com/462960/giraffe"
   },
   "keywords": [
     "react"
@@ -36,9 +36,11 @@
     "redux-form": "^7.1.2"
   },
   "devDependencies": {
+    "esformatter-jsx": "^8.0.1",
     "eslint": "^4.11.0",
     "eslint-plugin-react": "^7.4.0",
     "extract-text-webpack-plugin": "^3.0.2",
+    "fs": "0.0.1-security",
     "html-webpack-plugin": "^2.30.1",
     "path": "^0.12.7",
     "prop-types": "^15.6.0",
