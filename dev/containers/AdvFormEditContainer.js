@@ -25,6 +25,13 @@ export class AdvFormEditContainer extends React.Component {
     })
   }
 
+  componentWillUnmount() {
+    this.setState({
+      title: '',
+      text: ''
+    });
+  }
+
   submitForm(e) {
     const {title, text} = this.state;
     const {logged, removeAdv, addAdv, adverts, location, history} = this.props;
@@ -35,12 +42,12 @@ export class AdvFormEditContainer extends React.Component {
     if (title && text) {
       addAdv(author, title, text);
       removeAdv(adverts, i);
-    (function backHome(){
-    	history.replace('/')
-	})();
+      (function backHome() {
+        history.replace('/')
+      })();
     } else if (!title) {
       this.setState({
-        titleError: 'Please, enter title!'
+        titleError: 'Please, enter edited title!'
       });
       setTimeout(() => {
         this.setState({
@@ -49,7 +56,7 @@ export class AdvFormEditContainer extends React.Component {
       }, 2000);
     } else if (!text) {
       this.setState({
-        textError: 'Please, enter the text!'
+        textError: 'Please, enter edited text!'
       });
       setTimeout(() => {
         this.setState({
@@ -63,7 +70,7 @@ export class AdvFormEditContainer extends React.Component {
     const {titleError, textError, title, text} = this.state;
     return (
       <div>
-				<AdvFormEdit
+        <AdvFormEdit
       {...this.props}
       onChange={this.onChange}
       submitForm={this.submitForm}
@@ -72,7 +79,7 @@ export class AdvFormEditContainer extends React.Component {
       title={title}
       text={text}
       />
-			</div>
+      </div>
     )
   }
 }
