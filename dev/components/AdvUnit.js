@@ -8,20 +8,21 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 
 export class AdvUnit extends React.Component {
-		constructor(props){
-			super(props);
-			this.handleModal = this.handleModal.bind(this);
-		}
+  constructor(props) {
+    super(props);
+    this.handleModal = this.handleModal.bind(this);
+  }
 
-		handleModal(){
-			const { showModal, i, logged } = this.props;
-			showModal(logged[0].name, i);
-		}
+  handleModal() {
+    const {showModal, item, adverts, logged} = this.props;
+    const i = adverts.findIndex(x => x.id == item.id);
+    showModal(logged[0].name, i);
+  }
 
-		render(){
-			const { item, logged, history } = this.props;
+  render() {
+    const {item, logged, history} = this.props;
 
-			return	(<div>
+    return (<div>
 						<MuiThemeProvider>
 							<Paper className="adv-unit" zDepth={2}>
 								<div className="adv-unit-date">{item.date}</div>
@@ -30,29 +31,29 @@ export class AdvUnit extends React.Component {
 								<p>{item.text}</p>
 								<div className={(logged.length !== 0) && (logged[0].name == item.author) ? '' : 'none' }>
 									<MuiThemeProvider>
-                                  <RaisedButton 
-                                    label="Edit" 
-                                    onClick={() => history.replace(`/${item.id}`)}
-                                    />
+                                  <RaisedButton
+      label="Edit"
+      onClick={() => history.replace(`/${item.id}`)}
+      />
                                 </MuiThemeProvider>
-									<button 
-									className="remove-adv"
-									onClick={this.handleModal}
-									>
-									&times;
+									<button
+      className="remove-adv"
+      onClick={this.handleModal}
+      >
+									×
 									</button>
 								</div>
 							</Paper>
 						</MuiThemeProvider>
 					</div>)
-				}
-			}
+  }
+}
 
-				 AdvUnit.propTypes = {
-                    item: PropTypes.object,
-                    logged: PropTypes.array,
-                    removeAdv: PropTypes.func.isRequired,
-                    showModal: PropTypes.func.isRequired
-                  }
-						
+AdvUnit.propTypes = {
+  item: PropTypes.object,
+  logged: PropTypes.array,
+  removeAdv: PropTypes.func.isRequired,
+  showModal: PropTypes.func.isRequired
+}
+
 

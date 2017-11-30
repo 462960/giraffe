@@ -27,8 +27,8 @@ export class AdvFormEditContainer extends React.Component {
 
   componentWillUnmount() {
     this.setState({
-      title: '',
-      text: ''
+      titleError: '',
+      textError: ''
     });
   }
 
