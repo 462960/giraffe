@@ -6,8 +6,6 @@ import { AdvFormEdit } from '../components/AdvFormEdit';
 export class AdvFormEditContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.submitForm = this.submitForm.bind(this);
-    this.onChange = this.onChange.bind(this);
     const {adverts, location} = this.props;
     const i = adverts.findIndex(x => x.id == location.pathname.substr(1));
     const advert = adverts[i];
@@ -19,7 +17,7 @@ export class AdvFormEditContainer extends React.Component {
     }
   }
 
-  onChange(e) {
+  onChange = e => {
     this.setState({
       [e.target.name]: e.target.value
     })
@@ -32,7 +30,7 @@ export class AdvFormEditContainer extends React.Component {
     });
   }
 
-  submitForm(e) {
+  submitForm = e => {
     const {title, text} = this.state;
     const {logged, removeAdv, addAdv, adverts, location, history} = this.props;
     const i = adverts.findIndex(x => x.id == location.pathname.substr(1));

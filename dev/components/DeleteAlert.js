@@ -7,24 +7,19 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 
 export class DeleteAlert extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleDelete = this.handleDelete.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-  }
 
-  handleClose() {
+  handleClose = () => {
     const {hideModal, logged} = this.props;
     hideModal(logged[0].name);
   }
-  ;
 
-  handleDelete() {
+
+  handleDelete = () => {
     const {hideModal, removeAdv, adverts, modal, logged} = this.props;
     removeAdv(adverts, modal[0].i);
     hideModal(logged[0].name);
   }
-  ;
+
 
   render() {
     const {modal, logged} = this.props;

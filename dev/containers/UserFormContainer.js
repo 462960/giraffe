@@ -7,25 +7,21 @@ import {UserForm} from '../components/UserForm';
 export class UserFormContainer extends React.Component{
 	constructor(props){
 		super(props);
-		this.submitForm = this.submitForm.bind(this);
-		this.loginForm = this.loginForm.bind(this);
-		this.onChange = this.onChange.bind(this);
 		this.state = {
 			nameError: '',
 			passError: ''
 		}
-
 	}
 
 	componentDidMount(){
 		this.focusForm.focus();
 	}
 
-	onChange(e){
+	onChange = e => {
 		this.setState({[e.target.name]: e.target.value})
 	}
 
-	submitForm(e){
+	submitForm = e => {
 		e.preventDefault();
 		const {name, pass} = this.state;
 		const {users, addUser, authUser} = this.props;
@@ -65,7 +61,7 @@ export class UserFormContainer extends React.Component{
 		this.resetForm.reset();
 	}
 
-	loginForm(e){
+	loginForm = e => {
 		e.preventDefault();
 		const {users, authUser, logged} = this.props;
 		const {name, pass} = this.state;
