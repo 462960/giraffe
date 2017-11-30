@@ -40,8 +40,8 @@ export class AdvUnitContainer extends React.Component{
 	render(){
 		const {adverts} = this.props;
 		const {start, end } = this.state;
-		const advertItems = adverts.slice(start, end).map((item, i) => 
-			<AdvUnit key={i} item={item} i={i} {...this.props}/>
+		const advertItems = adverts.slice(start, end).map((item) => 
+			<AdvUnit key={item.id} item={item}  {...this.props}/>
 		);
 		return (
 			<div className="adv-wrapper">
