@@ -15,10 +15,6 @@ export class AdvFormContainer extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.focusForm.focus();
-  }
-
   onChange(e) {
     this.setState({
       [e.target.name]: e.target.value
@@ -40,7 +36,6 @@ export class AdvFormContainer extends React.Component {
       }, 2000);
       this.resetForm.reset();
     } else if (!title) {
-
       this.setState({
         titleError: 'Please, enter title!'
       });
@@ -70,7 +65,6 @@ export class AdvFormContainer extends React.Component {
       {...this.props}
       onChange={this.onChange}
       submitForm={this.submitForm}
-      focusRef={el => this.focusForm = el}
       resetRef={el => this.resetForm = el}
       titleError={titleError}
       textError={textError}

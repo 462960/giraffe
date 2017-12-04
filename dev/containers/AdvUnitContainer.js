@@ -22,6 +22,14 @@ export class AdvUnitContainer extends React.Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    (this.props.adverts.length !== nextProps.adverts.length) &&
+    this.setState({
+      start: 0,
+      end: 5
+    })
+  }
+
   pageBack() {
     this.setState({
       start: this.state.start - 5,
@@ -44,10 +52,10 @@ export class AdvUnitContainer extends React.Component {
     );
     return (
       <div className="adv-wrapper">
-				{advertItems}
-			<div className={adverts.length >= 6 ? `painators-wrapper` : `none`}>
-			<div className="pagination">
-				<MuiThemeProvider>
+        {advertItems}
+      <div className={adverts.length > 5 ? `painators-wrapper` : `none`}>
+      <div className="pagination">
+        <MuiThemeProvider>
                     <RaisedButton
       label="Back"
       primary={true}
@@ -64,9 +72,9 @@ export class AdvUnitContainer extends React.Component {
       onClick={this.pageForward}
       />
                 </MuiThemeProvider>
-			</div>
-			</div>
-			</div>
+      </div>
+      </div>
+      </div>
     )
   }
 }

@@ -21,7 +21,6 @@ export class AdvUnit extends React.Component {
 
   render() {
     const {item, logged, history} = this.props;
-
     return (<div>
 						<MuiThemeProvider>
 							<Paper className="adv-unit" zDepth={2}>
@@ -51,8 +50,9 @@ export class AdvUnit extends React.Component {
 
 AdvUnit.propTypes = {
   item: PropTypes.object,
+  history: PropTypes.object,
   logged: PropTypes.array,
-  removeAdv: PropTypes.func.isRequired,
+  adverts: PropTypes.array,
   showModal: PropTypes.func.isRequired
 }
 

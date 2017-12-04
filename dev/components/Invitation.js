@@ -13,7 +13,13 @@ export const Invitation = (props) => <div className="adv-wrapper">
     `Create your first adv, ${props.logged[0].name}!`
     : `Join us, visitor! There is no advertisement yet...`}
 									</h3>
+									<p>The App uses localStorage of your browser</p>
+									<p>GitHub link at the Top Left corner</p>
+									<p>There is no limit on registered users amount</p>
 									<p>Having more than 5 items of advertisement enables pagination</p>
+									<p>User can create any number of adverisement units but is allowed to edit/delete only "owned" ones</p>
+									<p>Any form submit enables verification</p>
+									<p>User can log out at any stage of interaction</p>
 								</Paper>
 							</MuiThemeProvider>
 						</div>

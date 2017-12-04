@@ -33,6 +33,7 @@ export class AdvFormEditContainer extends React.Component {
   }
 
   submitForm(e) {
+    e.preventDefault();
     const {title, text} = this.state;
     const {logged, removeAdv, addAdv, adverts, location, history} = this.props;
     const i = adverts.findIndex(x => x.id == location.pathname.substr(1));
