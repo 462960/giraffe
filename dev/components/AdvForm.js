@@ -6,7 +6,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 export const AdvForm = (props) => {
-  const {logged, titleError, textError, resetRef, onChange, submitForm} = props;
+  const {logged, titleError, textError, resetRef, focusRef, onChange, submitForm} = props;
   return (<form action="post"
     ref={resetRef}
     className="forms"
@@ -15,6 +15,7 @@ export const AdvForm = (props) => {
                             <MuiThemeProvider>
                               <TextField
     floatingLabelText="Title"
+    ref={focusRef}
     errorText={titleError}
     onChange={onChange}
     name="title"

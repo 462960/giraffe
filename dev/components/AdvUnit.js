@@ -8,12 +8,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 
 export class AdvUnit extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleModal = this.handleModal.bind(this);
-  }
 
-  handleModal() {
+  handleModal = () => {
     const {showModal, item, adverts, logged} = this.props;
     const i = adverts.findIndex(x => x.id == item.id);
     showModal(logged[0].name, i);

@@ -5,11 +5,8 @@ import { TopBar } from '../components/TopBar';
 
 
 export class TopBarContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.logOut = this.logOut.bind(this);
-  }
-  logOut(e) {
+
+  logOut = e => {
     e.preventDefault();
     const {logged, logoutUser, history} = this.props;
     logoutUser(logged[0].name);

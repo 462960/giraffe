@@ -6,22 +6,16 @@ import IconButton from 'material-ui/IconButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { GitHubIcon } from '../helpers/GitHubIcon';
 
-export const TopBar = (props) => {
-		const {logged, logOut} = props;
-		return (
-			<div>
-				<MuiThemeProvider>
-					<AppBar 
-					title={logged.length !== 0 ? `Nice to see you, ${logged[0].name}!` : `Hello, visitor!`}
-					 iconElementRight={logged.length !== 0 ? <FlatButton label="Logout" onClick={logOut}/> : <IconButton/>} 
-					 iconElementLeft={<IconButton href="https://github.com/462960/giraffe" target="blank"><GitHubIcon/></IconButton>}
-					/>
+export const TopBar = ({logged, logOut}) => <MuiThemeProvider>
+					<AppBar
+  title={logged.length !== 0 ? `Nice to see you, ${logged[0].name}!` : `Hello, visitor!`}
+  iconElementRight={logged.length !== 0 ? <FlatButton label="Logout" onClick={logOut}/> : <IconButton/>}
+  iconElementLeft={<IconButton href="https://github.com/462960/giraffe" target="blank"><GitHubIcon/></IconButton>}
+  />
 				</MuiThemeProvider>
-			</div>
-			)
-	}
+
 
 TopBar.propTypes = {
-	logged: PropTypes.array,
-	logOut: PropTypes.func
+  logged: PropTypes.array,
+  logOut: PropTypes.func
 }

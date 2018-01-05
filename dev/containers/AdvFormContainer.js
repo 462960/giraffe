@@ -7,21 +7,23 @@ import { AdvForm } from '../components/AdvForm';
 export class AdvFormContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.submitForm = this.submitForm.bind(this);
-    this.onChange = this.onChange.bind(this);
     this.state = {
       titleError: '',
       textError: ''
     }
   }
 
-  onChange(e) {
+  componentDidMount() {
+    this.focusForm.focus();
+  }
+
+  onChange = e => {
     this.setState({
       [e.target.name]: e.target.value
     })
   }
 
-  submitForm(e) {
+  submitForm = e => {
     e.preventDefault();
     const {title, text} = this.state;
     const {logged, addAdv} = this.props;
@@ -66,6 +68,7 @@ export class AdvFormContainer extends React.Component {
       onChange={this.onChange}
       submitForm={this.submitForm}
       resetRef={el => this.resetForm = el}
+      focusRef={el => this.focusForm = el}
       titleError={titleError}
       textError={textError}
       />
