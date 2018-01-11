@@ -1,16 +1,12 @@
-import { createStore, compose, applyMiddleware } from 'redux';
-import { rootReducer } from './reducers/rootReducer';
-import { loadState } from './helpers/localStorage';
+import { loadState } from "./helpers/localStorage";
+import { rootReducer } from "./reducers/rootReducer";
+import { createStore, applyMiddleware } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 
 const persistedState = loadState();
 
-
-const enhancers = compose(
-  window.devToolsExtension && window.devToolsExtension()
-);
-
 export const store = createStore(
-  rootReducer,
-  persistedState, 
-  enhancers
+	rootReducer,
+	persistedState,
+	composeWithDevTools()
 );
