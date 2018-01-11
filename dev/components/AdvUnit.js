@@ -13,6 +13,7 @@ export class AdvUnit extends React.Component {
 
   render() {
     const { item, logged, history } = this.props;
+
     return (
       <div>
         <MuiThemeProvider>

@@ -1,55 +1,50 @@
-
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HTMLwebpackPlugin = require('html-webpack-plugin');
-const UglyJS = require('uglify-js-plugin');
-const webpack = require('webpack');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HTMLwebpackPlugin = require("html-webpack-plugin");
+const UglyJS = require("uglify-js-plugin");
+const webpack = require("webpack");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
 
 const config = {
-  entry: __dirname + '/dev/index.js',
+  entry: __dirname + "/dev/index.js",
   output: {
-    path: __dirname + '/dist',
-    filename: 'bundle.js'
+    path: __dirname + "/dist",
+    filename: "bundle.js"
   },
-  devtool: 'source-map',
+  devtool: "source-map",
 
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
-        use: 'babel-loader'
+        use: "babel-loader"
       },
       {
         test: /\.scss$/,
         exclude: /(node_modules|bower_components)/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
-      },
+        use: ["style-loader", "css-loader", "sass-loader"]
+      }
     ]
   },
   plugins: [
-    // new ExtractTextPlugin({filename: 'dist/styles/styles.css', allChunks: true}), 
+    // new ExtractTextPlugin({filename: 'dist/styles/styles.css', allChunks: true}),
     new HTMLwebpackPlugin({
-      template: './dev/index.template.html',
+      template: "./dev/index.template.html",
       inject: true
     }),
     new UglyJS({
       compress: true, // false disables plugin
-      debug: true,
-    // sourceMap: true // or false. True is not default for WP2
+      debug: true
+      // sourceMap: true // or false. True is not default for WP2
     }),
     new BundleAnalyzerPlugin({
-      analyzerMode: 'static'
+      analyzerMode: "static"
     })
   ],
   resolve: {
-    extensions: ['.js', '.jsx', '.css', '.scss']
+    extensions: [".js", ".jsx", ".css", ".scss"]
   }
 };
 
 module.exports = config;
-

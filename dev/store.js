@@ -6,7 +6,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 const persistedState = loadState();
 
 export const store = createStore(
-	rootReducer,
-	persistedState,
-	composeWithDevTools()
+  rootReducer,
+  persistedState,
+  composeWithDevTools()
 );

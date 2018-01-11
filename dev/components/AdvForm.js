@@ -14,6 +14,7 @@ export const AdvForm = props => {
     onChange,
     submitForm
   } = props;
+
   return (
     <form action="post" ref={resetRef} className="forms">
       <div>
