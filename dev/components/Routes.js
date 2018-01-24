@@ -12,21 +12,26 @@ export const Routes = props => {
     adverts,
     users,
     logged,
-    logoutUser,
+    logOutUser,
     addAdv,
     addUser,
     authUser,
     hideModal,
     showModal,
     modal,
-    removeAdv
+    removeAdv,
+    history
   } = props;
 
   return (
     <div className="wrapper">
       <ErrorBoundary>
         <DeleteAlert {...props} />
-        <TopBarContainer {...props} />
+        <TopBarContainer 
+        logOutUser={logOutUser}
+        logged={logged}
+        history={history} 
+        />
         <Switch>
           <Route
             exact
@@ -49,7 +54,7 @@ export const Routes = props => {
                 adverts={adverts}
                 users={users}
                 logged={logged}
-                logoutUser={logoutUser}
+                logOutUser={logOutUser}
                 addAdv={addAdv}
                 addUser={addUser}
                 authUser={authUser}
@@ -70,7 +75,7 @@ Routes.propTypes = {
   adverts: PropTypes.array,
   users: PropTypes.array,
   logged: PropTypes.array,
-  logoutUser: PropTypes.func,
+  logOutUser: PropTypes.func,
   addAdv: PropTypes.func,
   addUser: PropTypes.func,
   authUser: PropTypes.func,

@@ -28,7 +28,7 @@ export function authUser(name) {
 }
 
 // Logout user
-export function logoutUser(name) {
+export function logOutUser(name) {
   return {
     type: LOGOUT_USER,
     name

@@ -5,8 +5,8 @@ import { TopBar } from "../components/TopBar";
 export class TopBarContainer extends React.Component {
   logOut = e => {
     e.preventDefault();
-    const { logged, logoutUser, history } = this.props;
-    logoutUser(logged[0].name);
+    const { logged, logOutUser, history } = this.props;
+    logOutUser(logged[0].name);
     (function backHome() {
       history.replace("/");
     })();
@@ -19,6 +19,6 @@ export class TopBarContainer extends React.Component {
 
 TopBar.propTypes = {
   logged: PropTypes.array,
-  logoutUser: PropTypes.func.isRequired,
+  logOutUser: PropTypes.func.isRequired,
   history: PropTypes.object
 };
