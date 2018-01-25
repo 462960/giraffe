@@ -27,10 +27,10 @@ export const Routes = props => {
     <div className="wrapper">
       <ErrorBoundary>
         <DeleteAlert {...props} />
-        <TopBarContainer 
-        logOutUser={logOutUser}
-        logged={logged}
-        history={history} 
+        <TopBarContainer
+          logOutUser={logOutUser}
+          logged={logged}
+          history={history}
         />
         <Switch>
           <Route

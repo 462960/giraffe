@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { AdvForm } from "../components/AdvForm";
 
-export class AdvFormContainer extends React.Component {
+export default class AdvFormContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

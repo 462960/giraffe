@@ -8,7 +8,7 @@ const styles = {
   marginRight: 12
 };
 
-export class AdvUnitContainer extends React.Component {
+export default class AdvUnitContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
