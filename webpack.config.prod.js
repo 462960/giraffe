@@ -49,6 +49,5 @@ const config = {
 
 module.exports = config;
 
-kjkjkkjkjkjkjk
 
 
