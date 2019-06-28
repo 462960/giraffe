@@ -7,7 +7,9 @@
     "start": "webpack-dev-server --inline --hot --history-api-fallback --open",
     "prod": "webpack --config webpack.config.prod.js -p",
     "test": "jest",
-    "watch": "jest --watch"
+    "watch": "jest --watch",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -36,7 +38,8 @@
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
-    "redux-form": "^7.1.2"
+    "redux-form": "^7.1.2",
+    "snyk": "^1.89.0"
   },
   "devDependencies": {
     "babel-preset-stage-1": "^6.24.1",
@@ -55,5 +58,6 @@
     "webpack": "^3.8.1",
     "webpack-bundle-analyzer": "^2.9.1",
     "webpack-dev-server": "^2.9.4"
-  }
+  },
+  "snyk": true
 }
